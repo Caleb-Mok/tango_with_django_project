@@ -9,7 +9,11 @@
     <body>
         <h1>Rango says...</h1>
         <div>
-            hey there partner! <br/>
+            {% if user.is_authenticated %}
+                howdy {{ user.username }}! <br />
+            {% else %}
+                hey there partner! <br />
+            {% endif %}
             <strong>{{ boldmessage }}</strong>  
         </div>
 
